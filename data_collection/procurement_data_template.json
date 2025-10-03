@@ -1,0 +1,48 @@
+{
+  "data_collection_template": {
+    "source_metadata": {
+      "collection_date": "YYYY-MM-DD",
+      "data_source": "PNCP|Compras.gov.br|Portal_Transparencia|DOU|Industry_News",
+      "search_terms": ["edtech", "educação tecnológica", "plataforma de ensino", "idiomas", "línguas estrangeiras", "e-learning", "EAD"]
+    },
+    "required_fields": {
+      "orgao": "string - Nome do órgão contratante",
+      "uasg": "string - Unidade Administrativa de Serviços Gerais",
+      "modalidade": "string - Modalidade de licitação",
+      "objeto": "string - Descrição do objeto (≤240 chars)",
+      "data": "YYYY-MM-DD - Data do contrato/publicação",
+      "valor": "number - Valor em R$",
+      "fornecedor": "string - Nome do fornecedor",
+      "cnpj": "string - CNPJ do fornecedor",
+      "link": "string - URL da fonte original"
+    },
+    "classification_rules": {
+      "EdTech_geral": [
+        "plataforma de ensino",
+        "sistema de gestão educacional",
+        "software educacional",
+        "tecnologia educacional",
+        "LMS",
+        "ambiente virtual de aprendizagem"
+      ],
+      "Idiomas": [
+        "ensino de idiomas",
+        "línguas estrangeiras",
+        "inglês",
+        "espanhol",
+        "francês",
+        "alemão",
+        "curso de idiomas",
+        "certificação linguística"
+      ],
+      "substitutos": [
+        "e-learning genérico",
+        "plataforma EAD",
+        "videoconferência",
+        "streaming educacional",
+        "biblioteca digital"
+      ]
+    },
+    "deduplication_key": "cnpj + objeto_normalized + data"
+  }
+}

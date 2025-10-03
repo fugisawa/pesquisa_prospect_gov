@@ -1,0 +1,451 @@
+{
+  "metadata": {
+    "analysis_date": "2025-09-28T11:31:12.831457",
+    "datasets_analyzed": [
+      "radar_edtech.csv",
+      "radar_idiomas.csv"
+    ],
+    "total_contracts": 12,
+    "analysis_period": "2023 Q1-Q2",
+    "agent": "DATA_ANALYST_SWARM"
+  },
+  "executive_summary": {
+    "total_value": "R$ 23,320,000.00",
+    "edtech_value": "R$ 13,630,000.00",
+    "idiomas_value": "R$ 9,690,000.00",
+    "top_modality": "Pregão Eletrônico",
+    "highest_potential_organ": "Ministério da Educação"
+  },
+  "contract_profiles": {
+    "geral": {
+      "Concorrência": {
+        "count": 3,
+        "valor_total": "R$ 8,050,000.00",
+        "valor_medio": "R$ 2,683,333.33",
+        "percentual": "25.0%"
+      },
+      "Pregão Eletrônico": {
+        "count": 7,
+        "valor_total": "R$ 9,270,000.00",
+        "valor_medio": "R$ 1,324,285.71",
+        "percentual": "58.3%"
+      },
+      "Dispensa de Licitação": {
+        "count": 1,
+        "valor_total": "R$ 3,200,000.00",
+        "valor_medio": "R$ 3,200,000.00",
+        "percentual": "8.3%"
+      },
+      "Inexigibilidade": {
+        "count": 1,
+        "valor_total": "R$ 2,800,000.00",
+        "valor_medio": "R$ 2,800,000.00",
+        "percentual": "8.3%"
+      }
+    },
+    "edtech": {
+      "Concorrência": {
+        "count": 2,
+        "valor_total": "R$ 5,950,000.00",
+        "valor_medio": "R$ 2,975,000.00",
+        "percentual": "33.3%"
+      },
+      "Pregão Eletrônico": {
+        "count": 3,
+        "valor_total": "R$ 4,480,000.00",
+        "valor_medio": "R$ 1,493,333.33",
+        "percentual": "50.0%"
+      },
+      "Dispensa de Licitação": {
+        "count": 1,
+        "valor_total": "R$ 3,200,000.00",
+        "valor_medio": "R$ 3,200,000.00",
+        "percentual": "16.7%"
+      }
+    },
+    "idiomas": {
+      "Pregão Eletrônico": {
+        "count": 4,
+        "valor_total": "R$ 4,790,000.00",
+        "valor_medio": "R$ 1,197,500.00",
+        "percentual": "66.7%"
+      },
+      "Inexigibilidade": {
+        "count": 1,
+        "valor_total": "R$ 2,800,000.00",
+        "valor_medio": "R$ 2,800,000.00",
+        "percentual": "16.7%"
+      },
+      "Concorrência": {
+        "count": 1,
+        "valor_total": "R$ 2,100,000.00",
+        "valor_medio": "R$ 2,100,000.00",
+        "percentual": "16.7%"
+      }
+    },
+    "totals": {
+      "total_contracts": 12,
+      "total_value": "R$ 23,320,000.00",
+      "edtech_total": "R$ 13,630,000.00",
+      "idiomas_total": "R$ 9,690,000.00"
+    }
+  },
+  "top_prospects": [
+    {
+      "orgao": "Ministério da Educação",
+      "score": 75,
+      "valor_potencial": "R$ 9,600,000",
+      "valor_potencial_num": 9600000.0,
+      "modalidade_preferida": "Concorrência",
+      "freq_compras": 3,
+      "valor_medio": "R$ 3,200,000",
+      "categorias": 1,
+      "tem_idiomas": false,
+      "contratos_details": [
+        {
+          "modalidade": "Concorrência",
+          "valor_limpo": 4100000.0,
+          "categoria": "EdTech geral"
+        },
+        {
+          "modalidade": "Dispensa de Licitação",
+          "valor_limpo": 3200000.0,
+          "categoria": "EdTech geral"
+        },
+        {
+          "modalidade": "Pregão Eletrônico",
+          "valor_limpo": 2300000.0,
+          "categoria": "EdTech geral"
+        }
+      ]
+    },
+    {
+      "orgao": "Ministério das Relações Exteriores",
+      "score": 64.5,
+      "valor_potencial": "R$ 4,900,000",
+      "valor_potencial_num": 4900000.0,
+      "modalidade_preferida": "Concorrência",
+      "freq_compras": 2,
+      "valor_medio": "R$ 2,450,000",
+      "categorias": 1,
+      "tem_idiomas": true,
+      "contratos_details": [
+        {
+          "modalidade": "Inexigibilidade",
+          "valor_limpo": 2800000.0,
+          "categoria": "Idiomas"
+        },
+        {
+          "modalidade": "Concorrência",
+          "valor_limpo": 2100000.0,
+          "categoria": "Idiomas"
+        }
+      ]
+    },
+    {
+      "orgao": "ENAP - Escola Nacional de Administração Pública",
+      "score": 63.5,
+      "valor_potencial": "R$ 2,700,000",
+      "valor_potencial_num": 2700000.0,
+      "modalidade_preferida": "Pregão Eletrônico",
+      "freq_compras": 2,
+      "valor_medio": "R$ 1,350,000",
+      "categorias": 2,
+      "tem_idiomas": true,
+      "contratos_details": [
+        {
+          "modalidade": "Pregão Eletrônico",
+          "valor_limpo": 1200000.0,
+          "categoria": "EdTech geral"
+        },
+        {
+          "modalidade": "Pregão Eletrônico",
+          "valor_limpo": 1500000.0,
+          "categoria": "Idiomas"
+        }
+      ]
+    },
+    {
+      "orgao": "Ministério da Justiça e Segurança Pública",
+      "score": 47.5,
+      "valor_potencial": "R$ 1,750,000",
+      "valor_potencial_num": 1750000.0,
+      "modalidade_preferida": "Pregão Eletrônico",
+      "freq_compras": 1,
+      "valor_medio": "R$ 1,750,000",
+      "categorias": 1,
+      "tem_idiomas": true,
+      "contratos_details": [
+        {
+          "modalidade": "Pregão Eletrônico",
+          "valor_limpo": 1750000.0,
+          "categoria": "Idiomas"
+        }
+      ]
+    },
+    {
+      "orgao": "FNDE - Fundo Nacional de Desenvolvimento da Educação",
+      "score": 43.5,
+      "valor_potencial": "R$ 1,850,000",
+      "valor_potencial_num": 1850000.0,
+      "modalidade_preferida": "Concorrência",
+      "freq_compras": 1,
+      "valor_medio": "R$ 1,850,000",
+      "categorias": 1,
+      "tem_idiomas": false,
+      "contratos_details": [
+        {
+          "modalidade": "Concorrência",
+          "valor_limpo": 1850000.0,
+          "categoria": "EdTech geral"
+        }
+      ]
+    },
+    {
+      "orgao": "Ministério da Defesa",
+      "score": 38.9,
+      "valor_potencial": "R$ 890,000",
+      "valor_potencial_num": 890000.0,
+      "modalidade_preferida": "Pregão Eletrônico",
+      "freq_compras": 1,
+      "valor_medio": "R$ 890,000",
+      "categorias": 1,
+      "tem_idiomas": true,
+      "contratos_details": [
+        {
+          "modalidade": "Pregão Eletrônico",
+          "valor_limpo": 890000.0,
+          "categoria": "Idiomas"
+        }
+      ]
+    },
+    {
+      "orgao": "Ministério do Desenvolvimento, Indústria e Comércio Exterior",
+      "score": 36.5,
+      "valor_potencial": "R$ 650,000",
+      "valor_potencial_num": 650000.0,
+      "modalidade_preferida": "Pregão Eletrônico",
+      "freq_compras": 1,
+      "valor_medio": "R$ 650,000",
+      "categorias": 1,
+      "tem_idiomas": true,
+      "contratos_details": [
+        {
+          "modalidade": "Pregão Eletrônico",
+          "valor_limpo": 650000.0,
+          "categoria": "Idiomas"
+        }
+      ]
+    },
+    {
+      "orgao": "CAPES - Coordenação de Aperfeiçoamento de Pessoal de Nível Superior",
+      "score": 34.8,
+      "valor_potencial": "R$ 980,000",
+      "valor_potencial_num": 980000.0,
+      "modalidade_preferida": "Pregão Eletrônico",
+      "freq_compras": 1,
+      "valor_medio": "R$ 980,000",
+      "categorias": 1,
+      "tem_idiomas": false,
+      "contratos_details": [
+        {
+          "modalidade": "Pregão Eletrônico",
+          "valor_limpo": 980000.0,
+          "categoria": "EdTech geral"
+        }
+      ]
+    }
+  ],
+  "trend_analysis": {
+    "quarterly_concentration": [
+      {
+        "ano": 2023,
+        "trimestre": 1,
+        "count": 9,
+        "total_value": 15770000.0,
+        "avg_value": 1752222.2222222222,
+        "dominant_modality": "Pregão Eletrônico"
+      },
+      {
+        "ano": 2023,
+        "trimestre": 2,
+        "count": 3,
+        "total_value": 7550000.0,
+        "avg_value": 2516666.6666666665,
+        "dominant_modality": "Concorrência"
+      }
+    ],
+    "monthly_patterns": [
+      {
+        "month": 1,
+        "count": 3,
+        "total_value": 5130000.0,
+        "avg_value": 1710000.0
+      },
+      {
+        "month": 2,
+        "count": 3,
+        "total_value": 6800000.0,
+        "avg_value": 2266666.6666666665
+      },
+      {
+        "month": 3,
+        "count": 3,
+        "total_value": 3840000.0,
+        "avg_value": 1280000.0
+      },
+      {
+        "month": 4,
+        "count": 3,
+        "total_value": 7550000.0,
+        "avg_value": 2516666.6666666665
+      }
+    ],
+    "dominant_players": [
+      {
+        "fornecedor": "Eleva Educação S.A.",
+        "categoria": "EdTech geral",
+        "count": 1,
+        "total_value": 4100000.0,
+        "avg_value": 4100000.0,
+        "preferred_modality": "Concorrência"
+      },
+      {
+        "fornecedor": "Khan Academy Brasil LTDA",
+        "categoria": "EdTech geral",
+        "count": 1,
+        "total_value": 3200000.0,
+        "avg_value": 3200000.0,
+        "preferred_modality": "Dispensa de Licitação"
+      },
+      {
+        "fornecedor": "EF Education First Brasil LTDA",
+        "categoria": "Idiomas",
+        "count": 1,
+        "total_value": 2800000.0,
+        "avg_value": 2800000.0,
+        "preferred_modality": "Inexigibilidade"
+      },
+      {
+        "fornecedor": "Geekie Educação LTDA",
+        "categoria": "EdTech geral",
+        "count": 1,
+        "total_value": 2300000.0,
+        "avg_value": 2300000.0,
+        "preferred_modality": "Pregão Eletrônico"
+      },
+      {
+        "fornecedor": "CCAA Sistema de Ensino S.A.",
+        "categoria": "Idiomas",
+        "count": 1,
+        "total_value": 2100000.0,
+        "avg_value": 2100000.0,
+        "preferred_modality": "Concorrência"
+      },
+      {
+        "fornecedor": "Escola Digital S.A.",
+        "categoria": "EdTech geral",
+        "count": 1,
+        "total_value": 1850000.0,
+        "avg_value": 1850000.0,
+        "preferred_modality": "Concorrência"
+      },
+      {
+        "fornecedor": "Rosetta Stone Brasil LTDA",
+        "categoria": "Idiomas",
+        "count": 1,
+        "total_value": 1750000.0,
+        "avg_value": 1750000.0,
+        "preferred_modality": "Pregão Eletrônico"
+      },
+      {
+        "fornecedor": "Cultura Inglesa Associação Brasil Estados Unidos",
+        "categoria": "Idiomas",
+        "count": 1,
+        "total_value": 1500000.0,
+        "avg_value": 1500000.0,
+        "preferred_modality": "Pregão Eletrônico"
+      },
+      {
+        "fornecedor": "Descomplica Educação S.A.",
+        "categoria": "EdTech geral",
+        "count": 1,
+        "total_value": 1200000.0,
+        "avg_value": 1200000.0,
+        "preferred_modality": "Pregão Eletrônico"
+      },
+      {
+        "fornecedor": "Arbo Educação LTDA",
+        "categoria": "EdTech geral",
+        "count": 1,
+        "total_value": 980000.0,
+        "avg_value": 980000.0,
+        "preferred_modality": "Pregão Eletrônico"
+      }
+    ],
+    "modality_trends": [
+      {
+        "modalidade": "Concorrência",
+        "ano": 2023,
+        "count": 3,
+        "total_value": 8050000.0
+      },
+      {
+        "modalidade": "Dispensa de Licitação",
+        "ano": 2023,
+        "count": 1,
+        "total_value": 3200000.0
+      },
+      {
+        "modalidade": "Inexigibilidade",
+        "ano": 2023,
+        "count": 1,
+        "total_value": 2800000.0
+      },
+      {
+        "modalidade": "Pregão Eletrônico",
+        "ano": 2023,
+        "count": 7,
+        "total_value": 9270000.0
+      }
+    ],
+    "insights": {
+      "peak_quarter": "Q1 2023",
+      "dominant_modality": "Pregão Eletrônico",
+      "average_contract_value": "R$ 1,943,333.33",
+      "total_volume": "R$ 23,320,000.00"
+    }
+  },
+  "substitution_mapping": {
+    "substitute_contracts": [],
+    "summary": {
+      "total_substitute_organs": 0,
+      "total_substitute_contracts": 0,
+      "total_substitute_value": "R$ 0.00",
+      "total_migration_potential": "R$ 0.00",
+      "avg_substitute_value": "R$ nan"
+    }
+  },
+  "actionable_insights": {
+    "procurement_strategy": [
+      "Pregão Eletrônico é a modalidade dominante (58.3%)",
+      "Valor médio por contrato: R$ 1,943,333.33",
+      "Concentração em Q1 indica sazonalidade no planejamento"
+    ],
+    "high_priority_targets": [
+      "Top prospect: Ministério da Educação (Score: 75)",
+      "Maior potencial de valor: R$ 9,600,000",
+      "Focar em órgãos com compras recorrentes"
+    ],
+    "market_opportunities": [
+      "Mercado total identificado: R$ 23,320,000.00",
+      "Oportunidades de substituição: R$ 0.00",
+      "Convergência EdTech + Idiomas representa oportunidade de upsell"
+    ],
+    "competitive_positioning": [
+      "Mercado fragmentado com múltiplos players",
+      "Modalidade Concorrência oferece contratos de maior valor",
+      "Especialização em idiomas oferece menos concorrência"
+    ]
+  }
+}

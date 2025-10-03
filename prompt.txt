@@ -1,0 +1,9 @@
+npx claude-flow@alpha swarm "GERAR RELATÓRIO V2.
+Entradas: ./outputs/radar_idiomas.csv.
+Conteúdo: (a) Sumário executivo 1 pág; (b) Tendências 18m; (c) Previsões PCA 12m; 
+(d) Top 20 prospects por propensão à compra (critérios: frequência de compras digitais, valor médio, presença de PCA, aderência a idiomas); 
+(e) 'Mapa de Substitutos' (órgãos que compram EAD genérico com potencial migração p/ idiomas); 
+(f) 3 briefings de 1–2 págs p/ {cinco outros órgãos federais que compram idiomas} com histórico+janela+ações recomendadas;
+(g) Perfil dos contratos vencedores (se são por inexigibilidade, dispensa, concorrência ou pregão eletrônico; valor médio por licenças, número de licenças, número de alunos, valor médio por aluno, etc) 
+Saídas: ./outputs/relatorio_v2.md e ./outputs/briefings/{...}.
+Regras: citar fontes por item; bullets curtos; tabelas só quando clarificarem comparações." --continue-session --claude

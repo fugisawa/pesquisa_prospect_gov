@@ -1,0 +1,250 @@
+{
+  "bigtech_config": {
+    "monitoring_sources": {
+      "news_apis": [
+        "https://newsapi.org/v2/everything",
+        "https://api.gdeltproject.org/api/v2/summary/summary"
+      ],
+      "job_sites": [
+        "https://linkedin.com/jobs/search/",
+        "https://glassdoor.com/Jobs/"
+      ],
+      "patent_databases": [
+        "https://patents.google.com/",
+        "https://worldwide.espacenet.com/"
+      ],
+      "government_sites": [
+        "https://www.gov.br/comprasgovernamentais/",
+        "https://www.portaltransparencia.gov.br/"
+      ]
+    },
+    "keywords": {
+      "education": ["educação", "ensino", "escola", "universidade", "estudante"],
+      "government": ["governo", "público", "licitação", "contrato", "edital"],
+      "technology": ["tecnologia", "digital", "inteligência artificial", "IA", "plataforma"]
+    },
+    "monitoring_frequency": {
+      "high_priority": 3600,
+      "medium_priority": 21600,
+      "low_priority": 86400
+    },
+    "alert_thresholds": {
+      "critical": 0.9,
+      "high": 0.7,
+      "medium": 0.5,
+      "low": 0.3
+    }
+  },
+  "regulatory_config": {
+    "monitoring_sources": {
+      "official_sources": [
+        "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/lei/",
+        "https://www.in.gov.br/",
+        "https://portal.mec.gov.br/",
+        "https://www.gov.br/infraestrutura/pt-br",
+        "https://www.gov.br/anpd/pt-br"
+      ],
+      "legal_databases": [
+        "https://www.jusbrasil.com.br/",
+        "https://www.conjur.com.br/",
+        "https://www.migalhas.com.br/"
+      ],
+      "consultation_portals": [
+        "https://www.participa.br/",
+        "https://www.gov.br/participamaisbrasil/"
+      ]
+    },
+    "keywords": {
+      "education": ["educação", "ensino", "edtech", "educacional", "pedagógico"],
+      "technology": ["tecnologia", "digital", "software", "plataforma", "sistema"],
+      "government": ["governo", "público", "licitação", "contrato", "órgão"],
+      "compliance": ["conformidade", "regulamentação", "norma", "lei", "decreto"]
+    },
+    "monitoring_frequency": {
+      "critical_regulations": 86400,
+      "important_regulations": 259200,
+      "standard_regulations": 604800
+    },
+    "alert_triggers": {
+      "new_regulation": true,
+      "amendment_proposed": true,
+      "enforcement_action": true,
+      "interpretation_change": true,
+      "deadline_approaching": true
+    }
+  },
+  "portfolio_config": {
+    "diversification_targets": {
+      "Government B2B": {"allocation": 0.40, "risk": "Medium"},
+      "Corporate Training": {"allocation": 0.25, "risk": "Low"},
+      "Higher Education": {"allocation": 0.20, "risk": "Medium"},
+      "International Markets": {"allocation": 0.10, "risk": "High"},
+      "Consumer B2C": {"allocation": 0.05, "risk": "High"}
+    },
+    "risk_parameters": {
+      "max_single_segment": 0.50,
+      "min_segments": 3,
+      "max_customer_concentration": 0.30,
+      "target_herfindahl": 0.25,
+      "min_liquidity_reserve": 0.15
+    },
+    "optimization_constraints": {
+      "min_allocation_per_segment": 0.05,
+      "max_allocation_per_segment": 0.60,
+      "target_annual_growth": 0.25,
+      "max_annual_variance": 0.40,
+      "min_sharpe_ratio": 1.0
+    },
+    "scenario_parameters": {
+      "economic_downturn": {"probability": 0.20, "impact": -0.30},
+      "big_tech_entry": {"probability": 0.40, "impact": -0.25},
+      "regulatory_change": {"probability": 0.30, "impact": -0.15},
+      "technology_disruption": {"probability": 0.25, "impact": -0.20}
+    }
+  },
+  "warning_system_config": {
+    "alert_triggers": {
+      "big_tech_announces_brazil_investment": {
+        "severity": "Red",
+        "response_time": "Immediate",
+        "stakeholders": ["CEO", "CTO", "SALES", "BOARD"]
+      },
+      "new_regulatory_proposal_affecting_edtech": {
+        "severity": "Orange",
+        "response_time": "Priority",
+        "stakeholders": ["CEO", "LEGAL", "OPERATIONS"]
+      },
+      "major_competitor_raises_funding_50m_plus": {
+        "severity": "Yellow",
+        "response_time": "Priority",
+        "stakeholders": ["CEO", "SALES", "MARKETING"]
+      },
+      "government_changes_procurement_rules": {
+        "severity": "Orange",
+        "response_time": "Urgent",
+        "stakeholders": ["CEO", "LEGAL", "SALES"]
+      },
+      "economic_indicators_suggest_budget_cuts": {
+        "severity": "Yellow",
+        "response_time": "Priority",
+        "stakeholders": ["CEO", "CFO", "SALES"]
+      },
+      "security_breach_in_education_sector": {
+        "severity": "Orange",
+        "response_time": "Urgent",
+        "stakeholders": ["CEO", "CTO", "LEGAL"]
+      },
+      "technology_paradigm_shift_detected": {
+        "severity": "Yellow",
+        "response_time": "Priority",
+        "stakeholders": ["CTO", "CEO"]
+      }
+    },
+    "escalation_rules": {
+      "no_response_within_timeline": "escalate_to_board",
+      "severity_red_no_action_2_hours": "escalate_to_ceo",
+      "multiple_alerts_same_category": "escalate_severity"
+    },
+    "notification_channels": {
+      "email": {
+        "enabled": true,
+        "smtp_server": "smtp.gmail.com",
+        "smtp_port": 587
+      },
+      "slack": {
+        "enabled": true,
+        "webhook_url": "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+      },
+      "sms": {
+        "enabled": false,
+        "service": "twilio"
+      }
+    },
+    "monitoring_intervals": {
+      "critical_threats": 300,
+      "high_priority": 900,
+      "medium_priority": 3600,
+      "low_priority": 86400
+    }
+  },
+  "dashboard_config": {
+    "kri_thresholds": {
+      "big_tech_threat_score": {"high": 70, "critical": 85, "target": 40},
+      "regulatory_stability_index": {"high": 60, "critical": 40, "target": 80},
+      "market_concentration_ratio": {"high": 0.6, "critical": 0.8, "target": 0.4},
+      "competitive_pressure_index": {"high": 75, "critical": 90, "target": 50},
+      "portfolio_diversification_score": {"high": 40, "critical": 25, "target": 75},
+      "customer_concentration_risk": {"high": 0.4, "critical": 0.6, "target": 0.25},
+      "financial_stability_score": {"high": 60, "critical": 40, "target": 85},
+      "operational_risk_index": {"high": 65, "critical": 80, "target": 30}
+    },
+    "refresh_intervals": {
+      "real_time_metrics": 30,
+      "threat_intelligence": 300,
+      "portfolio_data": 3600,
+      "compliance_data": 7200
+    },
+    "visualization_settings": {
+      "color_scheme": {
+        "low": "#28a745",
+        "medium": "#ffc107",
+        "high": "#fd7e14",
+        "critical": "#dc3545"
+      },
+      "chart_height": 400,
+      "animation_duration": 1000
+    },
+    "alert_settings": {
+      "show_last_n_alerts": 10,
+      "auto_refresh_alerts": true,
+      "alert_sound_enabled": false
+    }
+  },
+  "stakeholder_config": {
+    "roles": {
+      "CEO": {
+        "name": "Chief Executive Officer",
+        "email": "ceo@company.com",
+        "phone": "+5511999999999",
+        "alert_level": "Orange"
+      },
+      "CTO": {
+        "name": "Chief Technology Officer",
+        "email": "cto@company.com",
+        "phone": "+5511999999998",
+        "alert_level": "Orange"
+      },
+      "CFO": {
+        "name": "Chief Financial Officer",
+        "email": "cfo@company.com",
+        "phone": "+5511999999997",
+        "alert_level": "Orange"
+      },
+      "LEGAL": {
+        "name": "Legal Counsel",
+        "email": "legal@company.com",
+        "alert_level": "Yellow"
+      },
+      "SALES": {
+        "name": "Sales Director",
+        "email": "sales@company.com",
+        "alert_level": "Yellow"
+      },
+      "MARKETING": {
+        "name": "Marketing Director",
+        "email": "marketing@company.com",
+        "alert_level": "Yellow"
+      },
+      "OPERATIONS": {
+        "name": "Operations Manager",
+        "email": "ops@company.com",
+        "alert_level": "Yellow"
+      },
+      "BOARD": {
+        "name": "Board of Directors",
+        "email": "board@company.com",
+        "alert_level": "Red"
+      }
+    }
+  }
+}

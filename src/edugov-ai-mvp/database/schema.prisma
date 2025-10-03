@@ -1,0 +1,652 @@
+// EduGov.AI Database Schema
+// Government-compliant database design with LGPD requirements
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User Management
+model User {
+  id                    String              @id @default(cuid())
+  auth0Id               String              @unique @map("auth0_id")
+  email                 String              @unique
+  name                  String
+  cpf                   String?             @unique // Encrypted CPF
+  siapeId               String?             @unique @map("siape_id")
+  role                  UserRole            @default(LEARNER)
+  institutionId         String              @map("institution_id")
+  institution           Institution         @relation(fields: [institutionId], references: [id])
+
+  // LGPD Compliance
+  lgpdConsentRecorded   Boolean             @default(false) @map("lgpd_consent_recorded")
+  dataRetentionExpiry   DateTime?           @map("data_retention_expiry")
+
+  // Preferences
+  language              String              @default("pt-BR")
+  timezone              String              @default("America/Sao_Paulo")
+  learningStyle         LearningStyle       @default(VISUAL)
+
+  // Accessibility
+  accessibilityEnabled  Boolean             @default(false) @map("accessibility_enabled")
+  accessibilitySettings Json?               @map("accessibility_settings")
+
+  // Government Validation
+  governmentValidated   Boolean             @default(false) @map("government_validated")
+  governmentData        Json?               @map("government_data")
+
+  // Audit fields
+  createdAt             DateTime            @default(now()) @map("created_at")
+  updatedAt             DateTime            @updatedAt @map("updated_at")
+  lastLoginAt           DateTime?           @map("last_login_at")
+
+  // Relations
+  learningPaths         LearningPath[]
+  assessmentResults     AssessmentResult[]
+  consentRecords        ConsentRecord[]
+  auditLogs             AuditLog[]
+  progressMetrics       ProgressMetric[]
+
+  @@map("users")
+}
+
+enum UserRole {
+  LEARNER
+  INSTRUCTOR
+  ADMIN
+  MANAGER
+  AUDITOR
+
+  @@map("user_role")
+}
+
+enum LearningStyle {
+  VISUAL
+  AUDITORY
+  KINESTHETIC
+  READING
+
+  @@map("learning_style")
+}
+
+// Institution Management
+model Institution {
+  id                  String              @id @default(cuid())
+  name                String
+  cnpj                String              @unique
+  type                InstitutionType
+  level               GovernmentLevel
+  state               BrazilianState
+  city                String
+
+  // Contact Information
+  email               String
+  phone               String?
+  address             Json                // Structured address
+
+  // Government Integration
+  sintegraConnected   Boolean             @default(false) @map("sintegra_connected")
+  siapeIntegrated     Boolean             @default(false) @map("siape_integrated")
+  lastGovSync         DateTime?           @map("last_gov_sync")
+
+  // Compliance Status
+  lgpdCompliant       Boolean             @default(false) @map("lgpd_compliant")
+  lastAudit           DateTime?           @map("last_audit")
+  complianceScore     Float?              @map("compliance_score")
+
+  // Subscription & Billing
+  subscriptionTier    SubscriptionTier    @default(FREEMIUM)
+  subscriptionExpiry  DateTime?           @map("subscription_expiry")
+
+  // Audit fields
+  createdAt           DateTime            @default(now()) @map("created_at")
+  updatedAt           DateTime            @updatedAt @map("updated_at")
+
+  // Relations
+  users               User[]
+  courses             Course[]
+  integrations        GovIntegration[]
+  complianceReports   ComplianceReport[]
+
+  @@map("institutions")
+}
+
+enum InstitutionType {
+  FEDERAL
+  STATE
+  MUNICIPAL
+  AUTARCHY
+  FOUNDATION
+
+  @@map("institution_type")
+}
+
+enum GovernmentLevel {
+  FEDERAL
+  STATE
+  MUNICIPAL
+
+  @@map("government_level")
+}
+
+enum BrazilianState {
+  AC AL AP AM BA CE DF ES GO MA MT MS MG PA PB PR PE PI RJ RN RS RO RR SC SP SE TO
+
+  @@map("brazilian_state")
+}
+
+enum SubscriptionTier {
+  FREEMIUM
+  PROFESSIONAL
+  ENTERPRISE
+
+  @@map("subscription_tier")
+}
+
+// Learning Content
+model Course {
+  id                  String              @id @default(cuid())
+  title               String
+  description         String
+  language            String              @default("pt-BR")
+  institutionId       String              @map("institution_id")
+  institution         Institution         @relation(fields: [institutionId], references: [id])
+
+  // Course Configuration
+  difficulty          ProficiencyLevel    @default(BEGINNER)
+  estimatedHours      Int                 @map("estimated_hours")
+  category            String
+  tags                String[]
+
+  // LGPD Compliance
+  dataProcessingPurpose String            @map("data_processing_purpose")
+  retentionPeriod     Int                 @default(1825) @map("retention_period") // 5 years in days
+
+  // Status
+  isActive            Boolean             @default(true) @map("is_active")
+  publishedAt         DateTime?           @map("published_at")
+
+  // Audit fields
+  createdAt           DateTime            @default(now()) @map("created_at")
+  updatedAt           DateTime            @updatedAt @map("updated_at")
+
+  // Relations
+  content             Content[]
+  assessments         Assessment[]
+  learningPaths       LearningPath[]
+
+  @@map("courses")
+}
+
+model Content {
+  id                  String              @id @default(cuid())
+  courseId            String              @map("course_id")
+  course              Course              @relation(fields: [courseId], references: [id])
+
+  title               String
+  type                ContentType
+  difficulty          ProficiencyLevel
+  duration            Int                 // in minutes
+
+  // Content Data
+  url                 String?             // S3 URL or external link
+  content             String?             // Text content (encrypted)
+  metadata            Json                // Additional metadata
+
+  // Accessibility
+  hasSubtitles        Boolean             @default(false) @map("has_subtitles")
+  hasAudioDescription Boolean             @default(false) @map("has_audio_description")
+  hasSignLanguage     Boolean             @default(false) @map("has_sign_language")
+
+  // AI Generated
+  aiGenerated         Boolean             @default(false) @map("ai_generated")
+  aiModel             String?             @map("ai_model")
+
+  // Audit fields
+  createdAt           DateTime            @default(now()) @map("created_at")
+  updatedAt           DateTime            @updatedAt @map("updated_at")
+
+  @@map("content")
+}
+
+enum ContentType {
+  VIDEO
+  AUDIO
+  TEXT
+  INTERACTIVE
+  ASSESSMENT
+  SIMULATION
+
+  @@map("content_type")
+}
+
+enum ProficiencyLevel {
+  BEGINNER
+  ELEMENTARY
+  INTERMEDIATE
+  UPPER_INTERMEDIATE
+  ADVANCED
+  PROFICIENT
+
+  @@map("proficiency_level")
+}
+
+// Assessment System
+model Assessment {
+  id                  String              @id @default(cuid())
+  courseId            String              @map("course_id")
+  course              Course              @relation(fields: [courseId], references: [id])
+
+  title               String
+  type                AssessmentType
+  language            String              @default("pt-BR")
+  timeLimit           Int?                @map("time_limit") // in minutes
+  passingScore        Float               @map("passing_score")
+
+  // Security
+  antiCheatingEnabled Boolean             @default(true) @map("anti_cheating_enabled")
+  proctoringRequired  Boolean             @default(false) @map("proctoring_required")
+
+  // Certification
+  certificationType   CertificationType?  @map("certification_type")
+  certificationLevel  String?             @map("certification_level")
+
+  // Audit fields
+  createdAt           DateTime            @default(now()) @map("created_at")
+  updatedAt           DateTime            @updatedAt @map("updated_at")
+
+  // Relations
+  questions           Question[]
+  results             AssessmentResult[]
+
+  @@map("assessments")
+}
+
+enum AssessmentType {
+  DIAGNOSTIC
+  FORMATIVE
+  SUMMATIVE
+  CERTIFICATION
+  ADAPTIVE
+
+  @@map("assessment_type")
+}
+
+enum CertificationType {
+  COURSE_COMPLETION
+  SKILL_CERTIFICATION
+  GOVERNMENT_QUALIFICATION
+  PROFESSIONAL_DEVELOPMENT
+
+  @@map("certification_type")
+}
+
+model Question {
+  id                  String              @id @default(cuid())
+  assessmentId        String              @map("assessment_id")
+  assessment          Assessment          @relation(fields: [assessmentId], references: [id])
+
+  type                QuestionType
+  content             String              // Encrypted question content
+  options             Json?               // Multiple choice options
+  correctAnswer       String              @map("correct_answer") // Encrypted
+  explanation         String?             // Encrypted explanation
+  difficulty          ProficiencyLevel
+  tags                String[]
+
+  // Points and timing
+  points              Float               @default(1.0)
+  timeLimit           Int?                @map("time_limit") // in seconds
+
+  // Audit fields
+  createdAt           DateTime            @default(now()) @map("created_at")
+  updatedAt           DateTime            @updatedAt @map("updated_at")
+
+  @@map("questions")
+}
+
+enum QuestionType {
+  MULTIPLE_CHOICE
+  TRUE_FALSE
+  FILL_BLANK
+  ESSAY
+  SPEAKING
+  LISTENING
+
+  @@map("question_type")
+}
+
+// Learning Path & AI Engine
+model LearningPath {
+  id                    String              @id @default(cuid())
+  userId                String              @map("user_id")
+  user                  User                @relation(fields: [userId], references: [id])
+  courseId              String              @map("course_id")
+  course                Course              @relation(fields: [courseId], references: [id])
+
+  currentLevel          ProficiencyLevel    @map("current_level")
+  targetLevel           ProficiencyLevel?   @map("target_level")
+  estimatedCompletion   DateTime            @map("estimated_completion")
+
+  // AI Personalization
+  personalizedContent   Json                @map("personalized_content")
+  difficultyAdjustments Json                @map("difficulty_adjustments")
+  aiRecommendations     Json                @map("ai_recommendations")
+
+  // Progress
+  completionRate        Float               @default(0.0) @map("completion_rate")
+  timeSpent             Int                 @default(0) @map("time_spent") // in minutes
+  lastActivity          DateTime?           @map("last_activity")
+
+  // Status
+  isActive              Boolean             @default(true) @map("is_active")
+  startedAt             DateTime            @default(now()) @map("started_at")
+  completedAt           DateTime?           @map("completed_at")
+
+  // Audit fields
+  createdAt             DateTime            @default(now()) @map("created_at")
+  updatedAt             DateTime            @updatedAt @map("updated_at")
+
+  // Relations
+  progressMetrics       ProgressMetric[]
+
+  @@map("learning_paths")
+}
+
+model ProgressMetric {
+  id                    String              @id @default(cuid())
+  userId                String              @map("user_id")
+  user                  User                @relation(fields: [userId], references: [id])
+  learningPathId        String?             @map("learning_path_id")
+  learningPath          LearningPath?       @relation(fields: [learningPathId], references: [id])
+
+  // Metrics
+  skill                 String
+  currentLevel          ProficiencyLevel    @map("current_level")
+  progress              Float               @default(0.0) // 0-1
+  targetLevel           ProficiencyLevel?   @map("target_level")
+  estimatedTime         Int?                @map("estimated_time") // hours to target
+
+  // Performance Data
+  sessionsCompleted     Int                 @default(0) @map("sessions_completed")
+  averageScore          Float?              @map("average_score")
+  streakDays            Int                 @default(0) @map("streak_days")
+
+  // Timestamps
+  lastUpdated           DateTime            @default(now()) @map("last_updated")
+  measuredAt            DateTime            @default(now()) @map("measured_at")
+
+  @@map("progress_metrics")
+}
+
+// Assessment Results
+model AssessmentResult {
+  id                    String              @id @default(cuid())
+  userId                String              @map("user_id")
+  user                  User                @relation(fields: [userId], references: [id])
+  assessmentId          String              @map("assessment_id")
+  assessment            Assessment          @relation(fields: [assessmentId], references: [id])
+
+  // Results
+  score                 Float
+  maxScore              Float               @map("max_score")
+  passed                Boolean
+  timeSpent             Int                 @map("time_spent") // in seconds
+
+  // Detailed Results
+  answers               Json                // Encrypted user answers
+  questionScores        Json                @map("question_scores")
+
+  // Anti-Cheating
+  securityFlags         Json?               @map("security_flags")
+  proctoringData        Json?               @map("proctoring_data")
+
+  // Certification
+  certificateIssued     Boolean             @default(false) @map("certificate_issued")
+  certificateId         String?             @unique @map("certificate_id")
+
+  // Audit fields
+  startedAt             DateTime            @map("started_at")
+  completedAt           DateTime            @map("completed_at")
+  createdAt             DateTime            @default(now()) @map("created_at")
+
+  @@map("assessment_results")
+}
+
+// LGPD Compliance
+model ConsentRecord {
+  id                    String              @id @default(cuid())
+  userId                String              @map("user_id")
+  user                  User                @relation(fields: [userId], references: [id])
+
+  consentType           ConsentType         @map("consent_type")
+  purpose               String
+  legalBasis            String              @map("legal_basis")
+  granted               Boolean
+  version               String              @default("1.0")
+
+  // Tracking
+  ipAddress             String              @map("ip_address")
+  userAgent             String?             @map("user_agent")
+  consentMethod         String              @default("explicit") @map("consent_method")
+  language              String              @default("pt-BR")
+
+  // Metadata
+  metadata              Json?
+
+  // Timestamps
+  requestedAt           DateTime            @default(now()) @map("requested_at")
+  respondedAt           DateTime?           @map("responded_at")
+  expiresAt             DateTime?           @map("expires_at")
+
+  @@map("consent_records")
+}
+
+enum ConsentType {
+  DATA_PROCESSING
+  ANALYTICS
+  MARKETING
+  THIRD_PARTY_SHARING
+
+  @@map("consent_type")
+}
+
+// Government Integration
+model GovIntegration {
+  id                    String              @id @default(cuid())
+  institutionId         String              @map("institution_id")
+  institution           Institution         @relation(fields: [institutionId], references: [id])
+
+  // Integration Status
+  sintegraConnected     Boolean             @default(false) @map("sintegra_connected")
+  siapeIntegrated       Boolean             @default(false) @map("siape_integrated")
+  receitaConnected      Boolean             @default(false) @map("receita_connected")
+
+  // Configuration
+  integrationConfig     Json                @map("integration_config")
+  lastSyncAt            DateTime?           @map("last_sync_at")
+  syncStatus            SyncStatus          @default(PENDING) @map("sync_status")
+
+  // Data Localization
+  dataRegion            String              @default("brazil") @map("data_region")
+  dataCenter            String              @default("sao-paulo") @map("data_center")
+  backupRegion          String              @default("brasilia") @map("backup_region")
+
+  // Audit fields
+  createdAt             DateTime            @default(now()) @map("created_at")
+  updatedAt             DateTime            @updatedAt @map("updated_at")
+
+  @@map("gov_integrations")
+}
+
+enum SyncStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  FAILED
+
+  @@map("sync_status")
+}
+
+// Compliance Reports
+model ComplianceReport {
+  id                    String              @id @default(cuid())
+  institutionId         String              @map("institution_id")
+  institution           Institution         @relation(fields: [institutionId], references: [id])
+
+  reportType            ReportType          @map("report_type")
+  periodStart           DateTime            @map("period_start")
+  periodEnd             DateTime            @map("period_end")
+
+  // Compliance Scores
+  overallScore          Float               @map("overall_score")
+  dataProtectionScore   Float               @map("data_protection_score")
+  accessControlScore    Float               @map("access_control_score")
+  auditTrailScore       Float               @map("audit_trail_score")
+
+  // Report Data
+  reportData            Json                @map("report_data")
+  recommendations       Json
+  issues                Json
+
+  // File Storage
+  reportUrl             String?             @map("report_url")
+  reportSize            Int?                @map("report_size")
+
+  // Status
+  status                ReportStatus        @default(GENERATED)
+
+  // Audit fields
+  generatedAt           DateTime            @default(now()) @map("generated_at")
+  downloadedAt          DateTime?           @map("downloaded_at")
+
+  @@map("compliance_reports")
+}
+
+enum ReportType {
+  LGPD_COMPLIANCE
+  SECURITY_AUDIT
+  DATA_PROCESSING
+  USER_RIGHTS
+
+  @@map("report_type")
+}
+
+enum ReportStatus {
+  GENERATED
+  DOWNLOADED
+  EXPIRED
+
+  @@map("report_status")
+}
+
+// Audit Trail
+model AuditLog {
+  id                    String              @id @default(cuid())
+  userId                String?             @map("user_id")
+  user                  User?               @relation(fields: [userId], references: [id])
+
+  // Event Details
+  action                String
+  resource              String
+  resourceId            String?             @map("resource_id")
+
+  // Request Context
+  ipAddress             String              @map("ip_address")
+  userAgent             String?             @map("user_agent")
+  sessionId             String?             @map("session_id")
+
+  // Additional Data
+  details               Json?
+  previousState         Json?               @map("previous_state")
+  newState              Json?               @map("new_state")
+
+  // Classification
+  severity              AuditSeverity       @default(INFO)
+  category              String
+  complianceRelevant    Boolean             @default(false) @map("compliance_relevant")
+
+  // Timestamps
+  timestamp             DateTime            @default(now())
+
+  @@index([userId, timestamp])
+  @@index([action, timestamp])
+  @@index([complianceRelevant, timestamp])
+  @@map("audit_logs")
+}
+
+enum AuditSeverity {
+  INFO
+  WARNING
+  ERROR
+  CRITICAL
+
+  @@map("audit_severity")
+}
+
+// Analytics and Dashboards
+model AnalyticsEvent {
+  id                    String              @id @default(cuid())
+  userId                String?             @map("user_id")
+  institutionId         String?             @map("institution_id")
+
+  // Event Data
+  eventType             String              @map("event_type")
+  eventName             String              @map("event_name")
+  properties            Json
+
+  // Context
+  sessionId             String?             @map("session_id")
+  pageUrl               String?             @map("page_url")
+  referrer              String?
+
+  // Device/Browser
+  deviceType            String?             @map("device_type")
+  browser               String?
+  os                    String?
+
+  // Privacy Compliance
+  anonymized            Boolean             @default(false)
+  consentGranted        Boolean             @map("consent_granted")
+
+  // Timestamps
+  timestamp             DateTime            @default(now())
+
+  @@index([eventType, timestamp])
+  @@index([userId, timestamp])
+  @@index([institutionId, timestamp])
+  @@map("analytics_events")
+}
+
+// Data Retention and Cleanup
+model DataRetention {
+  id                    String              @id @default(cuid())
+  tableName             String              @map("table_name")
+  retentionPeriod       Int                 @map("retention_period") // days
+  lastCleanup           DateTime?           @map("last_cleanup")
+  recordsDeleted        Int                 @default(0) @map("records_deleted")
+
+  // Configuration
+  enabled               Boolean             @default(true)
+  policyType            RetentionPolicy     @map("policy_type")
+
+  // Audit
+  createdAt             DateTime            @default(now()) @map("created_at")
+  updatedAt             DateTime            @updatedAt @map("updated_at")
+
+  @@unique([tableName])
+  @@map("data_retention")
+}
+
+enum RetentionPolicy {
+  LEGAL_REQUIREMENT
+  BUSINESS_NEED
+  USER_CONSENT
+  AUTOMATIC
+
+  @@map("retention_policy")
+}

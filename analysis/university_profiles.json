@@ -1,0 +1,48 @@
+{
+  "Universidades com Programas Internacionais": {
+    "potential_investment": "R$ 500K - R$ 2M/ano",
+    "key_drivers": [
+      "Programas de intercâmbio",
+      "Publicações internacionais",
+      "Cooperação técnica internacional",
+      "Dupla diplomação"
+    ],
+    "languages_needed": [
+      "Inglês",
+      "Espanhol",
+      "Francês"
+    ],
+    "migration_timeline": "Q1-Q2 2025",
+    "value_proposition": "Capacitação para pesquisa internacional e publicação acadêmica"
+  },
+  "Universidades Técnicas/Tecnológicas": {
+    "potential_investment": "R$ 300K - R$ 1M/ano",
+    "key_drivers": [
+      "Documentação técnica internacional",
+      "Certificações internacionais",
+      "Pesquisa aplicada global",
+      "Parcerias com empresas multinacionais"
+    ],
+    "languages_needed": [
+      "Inglês técnico",
+      "Alemão"
+    ],
+    "migration_timeline": "Q2-Q3 2025",
+    "value_proposition": "Inglês técnico especializado para inovação e pesquisa"
+  },
+  "Universidades de Medicina/Saúde": {
+    "potential_investment": "R$ 400K - R$ 1.5M/ano",
+    "key_drivers": [
+      "Literatura médica internacional",
+      "Conferências globais",
+      "Protocolos internacionais",
+      "Telemedicina"
+    ],
+    "languages_needed": [
+      "Inglês médico",
+      "Francês"
+    ],
+    "migration_timeline": "Q1-Q2 2025",
+    "value_proposition": "Inglês médico para atualização científica global"
+  }
+}

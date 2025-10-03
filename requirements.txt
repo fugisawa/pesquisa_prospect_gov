@@ -1,0 +1,35 @@
+# EdTech RADAR - Dependencies
+# Core data and analysis dependencies
+pandas>=1.5.0
+numpy>=1.21.0
+sqlite3  # Built into Python 3.x
+
+# Visualization dependencies
+plotly>=5.11.0
+dash>=2.7.0  # Optional for web dashboards
+
+# Data export dependencies
+openpyxl>=3.0.10  # Excel export
+xlsxwriter>=3.0.3  # Enhanced Excel formatting
+
+# PDF generation (optional)
+reportlab>=3.6.0  # PDF reports
+weasyprint>=57.0  # Alternative PDF generation
+
+# Workflow and scheduling
+schedule>=1.1.0  # Automated workflows
+asyncio  # Built into Python 3.x
+
+# Development and testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+black>=22.0.0  # Code formatting
+isort>=5.10.0  # Import sorting
+mypy>=0.991  # Type checking
+
+# Optional ML/AI dependencies (for enhanced scoring)
+scikit-learn>=1.1.0  # Optional for advanced analytics
+textblob>=0.17.1  # Optional for sentiment analysis
+
+# Logging and monitoring
+structlog>=22.0.0  # Structured logging

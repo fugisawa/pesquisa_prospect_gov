@@ -1,0 +1,281 @@
+{
+  "metadata": {
+    "generated_at": "2025-09-28",
+    "methodology": "Scoring quantitativo com 4 critérios ponderados",
+    "data_source": "radar_idiomas.csv + estrutura governamental federal",
+    "total_prospects_analyzed": 20
+  },
+  "scoring_criteria": {
+    "freq_compras_digitais": {
+      "weight": 0.25,
+      "description": "Frequência de compras digitais - histórico de modernização"
+    },
+    "valor_medio_contratos": {
+      "weight": 0.20,
+      "description": "Valor médio dos contratos - capacidade orçamentária"
+    },
+    "presenca_pca": {
+      "weight": 0.20,
+      "description": "Presença de PCA - planejamento estruturado"
+    },
+    "aderencia_idiomas": {
+      "weight": 0.35,
+      "description": "Aderência a idiomas - necessidade missional"
+    }
+  },
+  "top20_prospects": [
+    {
+      "rank": 1,
+      "orgao": "Banco Central do Brasil",
+      "score_propensao": 97.5,
+      "valor_estimado": 2500000,
+      "probabilidade_conversao": 78.2,
+      "timeline_oportunidade": "Q2-Q3 2025",
+      "justificativa": "Necessidade crítica de idiomas, atuação internacional, capacidade orçamentária muito_alta",
+      "tem_historico": false,
+      "categoria": "premium"
+    },
+    {
+      "rank": 2,
+      "orgao": "Ministério das Relações Exteriores",
+      "score_propensao": 95.0,
+      "valor_estimado": 3062500,
+      "probabilidade_conversao": 85.0,
+      "timeline_oportunidade": "Q1-Q2 2025",
+      "justificativa": "2 contratos históricos, necessidade crítica de idiomas, atuação internacional",
+      "tem_historico": true,
+      "categoria": "premium"
+    },
+    {
+      "rank": 3,
+      "orgao": "Ministério da Educação",
+      "score_propensao": 94.0,
+      "valor_estimado": 2500000,
+      "probabilidade_conversao": 65.8,
+      "timeline_oportunidade": "Q2-Q3 2025",
+      "justificativa": "Necessidade alta de idiomas, atuação internacional, capacidade orçamentária muito_alta",
+      "tem_historico": false,
+      "categoria": "premium"
+    },
+    {
+      "rank": 4,
+      "orgao": "CAPES - Coordenação de Aperfeiçoamento de Pessoal de Nível Superior",
+      "score_propensao": 88.5,
+      "valor_estimado": 1500000,
+      "probabilidade_conversao": 72.0,
+      "timeline_oportunidade": "Q2-Q3 2025",
+      "justificativa": "Necessidade crítica de idiomas, atuação internacional, capacidade orçamentária alta",
+      "tem_historico": false,
+      "categoria": "premium"
+    },
+    {
+      "rank": 5,
+      "orgao": "Ministério da Ciência, Tecnologia e Inovações",
+      "score_propensao": 84.0,
+      "valor_estimado": 1500000,
+      "probabilidade_conversao": 58.8,
+      "timeline_oportunidade": "Q2-Q3 2025",
+      "justificativa": "Necessidade alta de idiomas, atuação internacional, capacidade orçamentária alta",
+      "tem_historico": false,
+      "categoria": "prioritario"
+    },
+    {
+      "rank": 6,
+      "orgao": "Receita Federal do Brasil",
+      "score_propensao": 83.0,
+      "valor_estimado": 1500000,
+      "probabilidade_conversao": 58.1,
+      "timeline_oportunidade": "Q2-Q3 2025",
+      "justificativa": "Atuação internacional, capacidade orçamentária alta",
+      "tem_historico": false,
+      "categoria": "prioritario"
+    },
+    {
+      "rank": 7,
+      "orgao": "Ministério da Defesa",
+      "score_propensao": 78.5,
+      "valor_estimado": 1112500,
+      "probabilidade_conversao": 69.9,
+      "timeline_oportunidade": "Q1-Q2 2025",
+      "justificativa": "1 contrato histórico, necessidade alta de idiomas, atuação internacional",
+      "tem_historico": true,
+      "categoria": "prioritario"
+    },
+    {
+      "rank": 8,
+      "orgao": "Ministério da Justiça e Segurança Pública",
+      "score_propensao": 76.5,
+      "valor_estimado": 2187500,
+      "probabilidade_conversao": 68.6,
+      "timeline_oportunidade": "Q1-Q2 2025",
+      "justificativa": "1 contrato histórico, necessidade alta de idiomas, atuação internacional",
+      "tem_historico": true,
+      "categoria": "prioritario"
+    },
+    {
+      "rank": 9,
+      "orgao": "CNPq - Conselho Nacional de Desenvolvimento Científico e Tecnológico",
+      "score_propensao": 75.0,
+      "valor_estimado": 1500000,
+      "probabilidade_conversao": 52.5,
+      "timeline_oportunidade": "Q2-Q3 2025",
+      "justificativa": "Necessidade alta de idiomas, atuação internacional, capacidade orçamentária alta",
+      "tem_historico": false,
+      "categoria": "prioritario"
+    },
+    {
+      "rank": 10,
+      "orgao": "Embrapa - Empresa Brasileira de Pesquisa Agropecuária",
+      "score_propensao": 75.0,
+      "valor_estimado": 1500000,
+      "probabilidade_conversao": 52.5,
+      "timeline_oportunidade": "Q2-Q3 2025",
+      "justificativa": "Necessidade alta de idiomas, atuação internacional, capacidade orçamentária alta",
+      "tem_historico": false,
+      "categoria": "prioritario"
+    },
+    {
+      "rank": 11,
+      "orgao": "Polícia Federal",
+      "score_propensao": 75.0,
+      "valor_estimado": 1500000,
+      "probabilidade_conversao": 52.5,
+      "timeline_oportunidade": "Q2-Q3 2025",
+      "justificativa": "Necessidade alta de idiomas, atuação internacional, capacidade orçamentária alta",
+      "tem_historico": false,
+      "categoria": "prioritario"
+    },
+    {
+      "rank": 12,
+      "orgao": "ENAP - Escola Nacional de Administração Pública",
+      "score_propensao": 73.0,
+      "valor_estimado": 1875000,
+      "probabilidade_conversao": 66.1,
+      "timeline_oportunidade": "Q1-Q2 2025",
+      "justificativa": "1 contrato histórico, necessidade alta de idiomas",
+      "tem_historico": true,
+      "categoria": "prioritario"
+    },
+    {
+      "rank": 13,
+      "orgao": "Ministério das Comunicações",
+      "score_propensao": 73.0,
+      "valor_estimado": 1500000,
+      "probabilidade_conversao": 51.1,
+      "timeline_oportunidade": "Q2-Q3 2025",
+      "justificativa": "Atuação internacional, capacidade orçamentária alta",
+      "tem_historico": false,
+      "categoria": "prioritario"
+    },
+    {
+      "rank": 14,
+      "orgao": "Tribunal de Contas da União",
+      "score_propensao": 72.0,
+      "valor_estimado": 1500000,
+      "probabilidade_conversao": 50.4,
+      "timeline_oportunidade": "Q2-Q3 2025",
+      "justificativa": "Atuação internacional, capacidade orçamentária alta",
+      "tem_historico": false,
+      "categoria": "prioritario"
+    },
+    {
+      "rank": 15,
+      "orgao": "Ministério do Desenvolvimento, Indústria e Comércio Exterior",
+      "score_propensao": 68.5,
+      "valor_estimado": 812500,
+      "probabilidade_conversao": 63.0,
+      "timeline_oportunidade": "Q1-Q2 2025",
+      "justificativa": "1 contrato histórico, necessidade alta de idiomas, atuação internacional",
+      "tem_historico": true,
+      "categoria": "promissor"
+    },
+    {
+      "rank": 16,
+      "orgao": "ANVISA - Agência Nacional de Vigilância Sanitária",
+      "score_propensao": 68.0,
+      "valor_estimado": 1500000,
+      "probabilidade_conversao": 47.6,
+      "timeline_oportunidade": "Q2-Q3 2025",
+      "justificativa": "Atuação internacional, capacidade orçamentária alta",
+      "tem_historico": false,
+      "categoria": "promissor"
+    },
+    {
+      "rank": 17,
+      "orgao": "Supremo Tribunal Federal",
+      "score_propensao": 68.0,
+      "valor_estimado": 1500000,
+      "probabilidade_conversao": 47.6,
+      "timeline_oportunidade": "Q2-Q3 2025",
+      "justificativa": "Atuação internacional, capacidade orçamentária alta",
+      "tem_historico": false,
+      "categoria": "promissor"
+    },
+    {
+      "rank": 18,
+      "orgao": "Ministério do Turismo",
+      "score_propensao": 66.0,
+      "valor_estimado": 800000,
+      "probabilidade_conversao": 46.2,
+      "timeline_oportunidade": "Q3-Q4 2025",
+      "justificativa": "Necessidade alta de idiomas, atuação internacional",
+      "tem_historico": false,
+      "categoria": "promissor"
+    },
+    {
+      "rank": 19,
+      "orgao": "Ministério da Agricultura, Pecuária e Abastecimento",
+      "score_propensao": 63.0,
+      "valor_estimado": 1500000,
+      "probabilidade_conversao": 44.1,
+      "timeline_oportunidade": "Q3-Q4 2025",
+      "justificativa": "Atuação internacional, capacidade orçamentária alta",
+      "tem_historico": false,
+      "categoria": "promissor"
+    },
+    {
+      "rank": 20,
+      "orgao": "IBAMA - Instituto Brasileiro do Meio Ambiente",
+      "score_propensao": 59.0,
+      "valor_estimado": 800000,
+      "probabilidade_conversao": 41.3,
+      "timeline_oportunidade": "Q3-Q4 2025",
+      "justificativa": "Atuação internacional",
+      "tem_historico": false,
+      "categoria": "promissor"
+    }
+  ],
+  "summary_statistics": {
+    "valor_total_estimado": 32150000,
+    "pipeline_ponderado": 18827844,
+    "probabilidade_media_conversao": 58.6,
+    "orgaos_com_historico": 5,
+    "orgaos_premium": 5,
+    "orgaos_prioritarios": 10,
+    "orgaos_promissores": 5,
+    "timeline_distribution": {
+      "Q1_Q2_2025": 5,
+      "Q2_Q3_2025": 12,
+      "Q3_Q4_2025": 3
+    }
+  },
+  "strategic_insights": {
+    "hot_prospects": [
+      "Banco Central do Brasil",
+      "Ministério das Relações Exteriores",
+      "CAPES - Coordenação de Aperfeiçoamento de Pessoal de Nível Superior",
+      "Ministério da Defesa"
+    ],
+    "highest_value_opportunities": [
+      "Ministério das Relações Exteriores",
+      "Banco Central do Brasil",
+      "Ministério da Educação"
+    ],
+    "quickest_wins": [
+      "Ministério das Relações Exteriores",
+      "Ministério da Defesa",
+      "Ministério da Justiça e Segurança Pública",
+      "ENAP - Escola Nacional de Administração Pública"
+    ]
+  }
+}

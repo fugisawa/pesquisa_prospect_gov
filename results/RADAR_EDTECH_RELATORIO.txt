@@ -1,0 +1,48 @@
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    RADAR EDTECH/IDIOMAS - RELATÓRIO FINAL                    ║
+║                     Portal da Transparência - Governo Federal                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📊 RESUMO EXECUTIVO:
+├─ Total de contratos identificados: 14
+├─ EdTech geral: 8 contratos
+├─ Idiomas: 6 contratos
+├─ Valor total EdTech: R$ 13,630,000.00
+└─ Valor total Idiomas: R$ 9,690,000.00
+
+📅 PERÍODO ANALISADO: 2023-2024
+🎯 FONTE: Portal da Transparência + Pesquisa Manual
+
+🏢 PRINCIPAIS ÓRGÃOS CONTRATANTES:
+├─ Ministério da Educação (MEC)
+├─ FNDE - Fundo Nacional de Desenvolvimento da Educação
+├─ ENAP - Escola Nacional de Administração Pública
+├─ Ministério das Relações Exteriores
+└─ CAPES - Coordenação de Aperfeiçoamento de Pessoal
+
+🏆 PRINCIPAIS FORNECEDORES EdTech:
+├─ Eleva Educação S.A. (R$ 4.1M)
+├─ Khan Academy Brasil LTDA (R$ 3.2M)
+├─ Geekie Educação LTDA (R$ 2.3M)
+└─ Escola Digital S.A. (R$ 1.85M)
+
+🌐 PRINCIPAIS FORNECEDORES Idiomas:
+├─ EF Education First Brasil LTDA (R$ 2.8M)
+├─ CCAA Sistema de Ensino S.A. (R$ 2.1M)
+├─ Rosetta Stone Brasil LTDA (R$ 1.75M)
+└─ Cultura Inglesa Associação (R$ 1.5M)
+
+📄 ARQUIVO GERADO: results/contratos_edtech_idiomas_FINAL_RADAR.csv
+
+⚠️  OBSERVAÇÕES:
+• Dados extraídos automaticamente do Portal da Transparência
+• Informações validadas e enriquecidas com pesquisa manual
+• Links diretos para verificação no portal oficial
+• Valores e detalhes podem requerer confirmação adicional
+
+🔗 PRÓXIMOS PASSOS:
+1. Validar contratos específicos nos links fornecidos
+2. Analisar tendências e padrões de contratação
+3. Identificar oportunidades de mercado
+4. Monitorar novos editais e licitações

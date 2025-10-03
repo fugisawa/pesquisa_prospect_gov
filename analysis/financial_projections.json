@@ -1,0 +1,23 @@
+{
+  "Conservador (30% conversão)": {
+    "q1_2025": 864000,
+    "q2_2025": 1030500,
+    "q4_2025": 1118700,
+    "total_anual": 1118700,
+    "crescimento_anual": "15%"
+  },
+  "Realista (50% conversão)": {
+    "q1_2025": 1440000,
+    "q2_2025": 1717500,
+    "q4_2025": 1864500,
+    "total_anual": 1864500,
+    "crescimento_anual": "25%"
+  },
+  "Otimista (70% conversão)": {
+    "q1_2025": 2016000,
+    "q2_2025": 2404500,
+    "q4_2025": 2610300,
+    "total_anual": 2610300,
+    "crescimento_anual": "35%"
+  }
+}

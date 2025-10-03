@@ -1,0 +1,128 @@
+{
+  "Ministério da Educação": {
+    "prioridade": "ALTA - Abordagem imediata",
+    "abordagem_inicial": "Apresentação executiva sobre modernização da capacitação digital",
+    "proposta_piloto": {
+      "orcamento": "R$ 960,000",
+      "duracao": "3-6 meses",
+      "escopo": "50-100 servidores prioritários",
+      "métricas": [
+        "Engajamento",
+        "Progresso linguístico",
+        "Satisfação",
+        "ROI"
+      ]
+    },
+    "investimento_sugerido": "R$ 2,400,000/ano (25% do orçamento EAD atual)",
+    "roi_projetado": {
+      "redução_custos_treinamento": "20-30%",
+      "melhoria_produtividade": "15-25%",
+      "acesso_a_mercados_globais": "Incalculável",
+      "tempo_de_retorno": "18-24 meses"
+    },
+    "timeline_negociacao": "Q1 2025",
+    "stakeholders_chave": [
+      "Secretário Executivo",
+      "Diretoria de Tecnologia",
+      "Coordenação de Capacitação"
+    ],
+    "argumentos_principais": [
+      "Alinhamento com diretrizes de internacionalização da educação",
+      "Capacitação para cooperação técnica internacional",
+      "Modernização da formação de educadores",
+      "Preparação para demandas globais da educação"
+    ],
+    "diferenciais_competitivos": [
+      "Especialização vs generalização",
+      "Metodologia focada em resultados mensuráveis",
+      "Experiência comprovada no setor público",
+      "Suporte técnico especializado",
+      "Integração com plataformas existentes",
+      "Certificações reconhecidas internacionalmente"
+    ]
+  },
+  "FNDE - Fundo Nacional de Desenvolvimento da Educação": {
+    "prioridade": "MÉDIA - Abordagem em Q2",
+    "abordagem_inicial": "Demonstração de ROI e casos de sucesso em educação",
+    "proposta_piloto": {
+      "orcamento": "R$ 185,000",
+      "duracao": "3-6 meses",
+      "escopo": "50-100 servidores prioritários",
+      "métricas": [
+        "Engajamento",
+        "Progresso linguístico",
+        "Satisfação",
+        "ROI"
+      ]
+    },
+    "investimento_sugerido": "R$ 462,500/ano (25% do orçamento EAD atual)",
+    "roi_projetado": {
+      "redução_custos_treinamento": "20-30%",
+      "melhoria_produtividade": "15-25%",
+      "acesso_a_mercados_globais": "Incalculável",
+      "tempo_de_retorno": "18-24 meses"
+    },
+    "timeline_negociacao": "Q2 2025",
+    "stakeholders_chave": [
+      "Presidência",
+      "Diretoria de Tecnologia",
+      "Coordenação Pedagógica"
+    ],
+    "argumentos_principais": [
+      "Alinhamento com diretrizes de internacionalização da educação",
+      "Capacitação para cooperação técnica internacional",
+      "Modernização da formação de educadores",
+      "Preparação para demandas globais da educação"
+    ],
+    "diferenciais_competitivos": [
+      "Especialização vs generalização",
+      "Metodologia focada em resultados mensuráveis",
+      "Experiência comprovada no setor público",
+      "Suporte técnico especializado",
+      "Integração com plataformas existentes",
+      "Certificações reconhecidas internacionalmente"
+    ]
+  },
+  "CAPES - Coordenação de Aperfeiçoamento de Pessoal de Nível Superior": {
+    "prioridade": "BAIXA - Abordagem em Q4",
+    "abordagem_inicial": "Foco em inglês acadêmico e publicações internacionais",
+    "proposta_piloto": {
+      "orcamento": "R$ 98,000",
+      "duracao": "3-6 meses",
+      "escopo": "50-100 servidores prioritários",
+      "métricas": [
+        "Engajamento",
+        "Progresso linguístico",
+        "Satisfação",
+        "ROI"
+      ]
+    },
+    "investimento_sugerido": "R$ 245,000/ano (25% do orçamento EAD atual)",
+    "roi_projetado": {
+      "redução_custos_treinamento": "20-30%",
+      "melhoria_produtividade": "15-25%",
+      "acesso_a_mercados_globais": "Incalculável",
+      "tempo_de_retorno": "18-24 meses"
+    },
+    "timeline_negociacao": "Q4 2025",
+    "stakeholders_chave": [
+      "Presidência",
+      "Diretoria de Avaliação",
+      "Coordenação Internacional"
+    ],
+    "argumentos_principais": [
+      "Fortalecimento da pós-graduação brasileira",
+      "Aumento de publicações em periódicos internacionais",
+      "Melhoria na avaliação de programas de pós-graduação",
+      "Facilitar intercâmbios e cooperação acadêmica"
+    ],
+    "diferenciais_competitivos": [
+      "Especialização vs generalização",
+      "Metodologia focada em resultados mensuráveis",
+      "Experiência comprovada no setor público",
+      "Suporte técnico especializado",
+      "Integração com plataformas existentes",
+      "Certificações reconhecidas internacionalmente"
+    ]
+  }
+}

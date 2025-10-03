@@ -1,0 +1,42 @@
+{
+  "Resistência à mudança": {
+    "probabilidade": "Média",
+    "impacto": "Alto",
+    "mitigação": [
+      "Demonstrações práticas de benefícios",
+      "Casos de sucesso em órgãos similares",
+      "Envolvimento de stakeholders desde o início",
+      "Programa de change management"
+    ]
+  },
+  "Restrições orçamentárias": {
+    "probabilidade": "Alta",
+    "impacto": "Alto",
+    "mitigação": [
+      "Modelo de pagamento flexível",
+      "Demonstração clara de ROI",
+      "Proposta de realocação de recursos",
+      "Parcerias para financiamento"
+    ]
+  },
+  "Concorrência de EAD genérico": {
+    "probabilidade": "Média",
+    "impacto": "Médio",
+    "mitigação": [
+      "Diferenciação clara de valor",
+      "Preço competitivo com melhor valor",
+      "Proposta de complementaridade",
+      "Foco em resultados específicos"
+    ]
+  },
+  "Mudanças na gestão": {
+    "probabilidade": "Média",
+    "impacto": "Alto",
+    "mitigação": [
+      "Documentação de benefícios",
+      "Múltiplos pontos de contato",
+      "Contratos de longo prazo",
+      "Alinhamento com políticas públicas"
+    ]
+  }
+}

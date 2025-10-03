@@ -1,0 +1,49 @@
+{
+  "Q1 2025 - Preparação & Prospecção": {
+    "semana_1-2": [
+      "Validação de dados com pesquisa primária",
+      "Desenvolvimento de materiais comerciais",
+      "Treinamento da equipe de vendas"
+    ],
+    "semana_3-4": [
+      "Agendamento com Ministério da Educação",
+      "Preparação de proposta customizada",
+      "Benchmark competitivo detalhado"
+    ],
+    "semana_5-8": [
+      "Apresentações executivas",
+      "Negociação de piloto",
+      "Definição de métricas de sucesso"
+    ],
+    "semana_9-12": [
+      "Implementação de piloto",
+      "Acompanhamento e ajustes",
+      "Documentação de resultados"
+    ]
+  },
+  "Q2 2025 - Expansão": {
+    "mês_1": [
+      "Abordagem FNDE com casos de sucesso",
+      "Proposta baseada em ROI comprovado",
+      "Negociação comercial"
+    ],
+    "mês_2": [
+      "Implementação FNDE",
+      "Refinamento da proposta de valor",
+      "Desenvolvimento de parcerias"
+    ],
+    "mês_3": [
+      "Análise de resultados consolidados",
+      "Preparação para expansão Q3",
+      "Otimização de processos"
+    ]
+  },
+  "Q3-Q4 2025 - Consolidação": {
+    "objetivos": [
+      "Abordagem CAPES e outros órgãos menores",
+      "Padronização da oferta",
+      "Escalabilidade da operação",
+      "Planejamento para 2026"
+    ]
+  }
+}
